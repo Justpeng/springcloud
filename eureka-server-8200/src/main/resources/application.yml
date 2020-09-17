@@ -9,3 +9,8 @@ eureka:
       defaultZone: http://eureka8000.com:8000/eureka,http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka
     register-with-eureka: true
     fetch-registry: true
+
+spring:
+  #指定对外暴露服务名称
+  application:
+    name: eureka8200.com-server

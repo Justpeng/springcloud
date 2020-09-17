@@ -23,3 +23,8 @@ eureka:
 
 server:
   port: 8000
+
+spring:
+  #指定对外暴露服务名称
+  application:
+    name: eureka8000.com-server
