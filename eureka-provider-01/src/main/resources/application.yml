@@ -2,7 +2,8 @@ eureka:
   #指定eureka服务中心
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://eureka8000.com:8000/eureka,http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka
+#      defaultZone: http://localhost:8000/eureka 单机
   #指定当前客户端在注册中心的名称
   instance:
     instance-id: com-just-e-provider-8081
@@ -19,13 +20,20 @@ server:
   port: 8081
 
 management:
-  #开启所有监控
+  #开启所有监控，shutup等
   endpoints:
     web:
       exposure:
         include: "*"
   #开启shutdown监控终端
   endpoint:
-    env:
-      post:
-        enabled: true
+    shutdown:
+      enabled: true
+
+
+#management:
+#  #开启service-registry监控
+#  endpoints:
+#    web:
+#      exposure:
+#        include: service-registry
