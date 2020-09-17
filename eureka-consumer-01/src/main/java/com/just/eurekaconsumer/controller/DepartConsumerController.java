@@ -20,9 +20,6 @@ public class DepartConsumerController {
     private DepartService departService;
 
     @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
     private DiscoveryClient discoveryClient;
 
     //主机名+端口号 -- 改为使用 提供者的为微服务名称

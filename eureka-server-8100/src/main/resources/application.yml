@@ -6,6 +6,6 @@ eureka:
     hostname: eureka8100.com
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka,http://localhost:8100/eureka,http://localhost:8200/eureka
-    register-with-eureka: false
-    fetch-registry: false
+      defaultZone: http://eureka8000.com:8000/eureka,http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka
+    register-with-eureka: true
+    fetch-registry: true

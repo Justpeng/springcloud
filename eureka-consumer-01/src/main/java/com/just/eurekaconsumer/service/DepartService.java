@@ -20,6 +20,9 @@ public class DepartService {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     public List<String> getDeparts() {
         ServiceInstance serviceInstance = loadBalancerClient.choose("com-just-e-provider");
         //url
@@ -31,7 +34,6 @@ public class DepartService {
                 .append(serviceInstance.getPort())
                 .append("/depart").append("/names");
 
-        RestTemplate restTemplate = new RestTemplate();
         ParameterizedTypeReference<List<String>> typeReference = new ParameterizedTypeReference<List<String>>() {
         };
         ResponseEntity<List<String>> responseEntity = restTemplate.exchange(stringBuffer.toString(), HttpMethod.GET, null, typeReference);
