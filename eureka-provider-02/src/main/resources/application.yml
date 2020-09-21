@@ -1,0 +1,39 @@
+eureka:
+  #指定eureka服务中心
+  client:
+    service-url:
+      defaultZone: http://eureka8000.com:8000/eureka,http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka
+#      defaultZone: http://localhost:8000/eureka 单机
+  #指定当前客户端在注册中心的名称
+  instance:
+    instance-id: com-just-e-provider-8082
+
+spring:
+  #指定对外暴露服务名称
+  application:
+    name: com-just-e-provider
+  jpa:
+    #指定是否在spring启动时创建表
+    generate-ddl: true
+
+server:
+  port: 8082
+
+management:
+  #开启所有监控，shutup等
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  #开启shutdown监控终端
+  endpoint:
+    shutdown:
+      enabled: true
+
+
+#management:
+#  #开启service-registry监控
+#  endpoints:
+#    web:
+#      exposure:
+#        include: service-registry

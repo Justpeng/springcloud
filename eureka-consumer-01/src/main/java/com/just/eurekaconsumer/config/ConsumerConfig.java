@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class DepartCodeConfig {
+public class ConsumerConfig {
 
     @LoadBalanced     //消费者客户端负载均衡
     @Bean
