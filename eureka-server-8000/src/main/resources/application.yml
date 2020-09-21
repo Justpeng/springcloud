@@ -18,8 +18,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka8000.com:8000/eureka,http://eureka8100.com:8100/eureka,http://eureka8200.com:8200/eureka
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
+    fetch-registry: false
 
 server:
   port: 8000
